@@ -1,3 +1,5 @@
+//const io = require('socket.io-client');
+
 var elems = document.querySelectorAll(".button")
 var load = document.querySelector(".load")
 var userSymbol = "X"
@@ -7,6 +9,8 @@ var win = document.querySelector(".win")
 var lose = document.querySelector(".lose")
 
 load.classList.add("hide")
+
+//socket = io.connect("http://localhost:3000")
 
 elems.forEach(function(elem){
     elem.addEventListener("click", function(){
@@ -46,7 +50,7 @@ function checkWin(symbol){
     var c1=[0,4,8]
     var c2=[2,4,6]
 
-    won = a1.every(function(i){return elems[i].innerHTML == symbol;}) || a2.every(function(i){return elems[i].innerHTML == symbol;}) || a3.every(function(i){return elems[i].innerHTML == symbol;}) || b1.every(function(i){return elems[i].innerHTML == symbol;}) || b2.every(function(i){return elems[i].innerHTML == symbol;}) || b3.every(function(i){return elems[i].innerHTML == symbol;}) || c1.every(function(i){return elems[i].innerHTML == symbol;}) || c2.every(function(i){return elems[i].innerHTML == symbol;})
+    var won = a1.every(function(i){return elems[i].innerHTML == symbol;}) || a2.every(function(i){return elems[i].innerHTML == symbol;}) || a3.every(function(i){return elems[i].innerHTML == symbol;}) || b1.every(function(i){return elems[i].innerHTML == symbol;}) || b2.every(function(i){return elems[i].innerHTML == symbol;}) || b3.every(function(i){return elems[i].innerHTML == symbol;}) || c1.every(function(i){return elems[i].innerHTML == symbol;}) || c2.every(function(i){return elems[i].innerHTML == symbol;})
 
     return won;
 }
